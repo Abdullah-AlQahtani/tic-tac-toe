@@ -8,7 +8,8 @@ var xArr = [];
 var oArr = [];
 // game timer
 var second = 0, minute = 0; hour = 0;
-var timer = document.querySelector(".timer");
+var timer = document.querySelector(".timer h3");
+// var totaltTimer = $(timer).text();
 var interval;
 // move counter
 var player1Moves = 0;
@@ -18,26 +19,30 @@ var player2Moves = 0;
 const stars = document.querySelectorAll(".fa-star");
 
 // stars list
-let starsList = document.querySelectorAll(".stars li");
+var starsList = document.querySelectorAll(".stars li");
 
 
 $(document).ready(function () {
     startTimer();
+    //player turn
     $('.playerTurn h3').text("Player turn: " + player1 + " - ");
     $('.playerTurn img').attr("src", "https://i.imgur.com/xFbz6iF.png");
+    //player 1 score
     $('.player1').text(" - " + player1 + " Score: " + p2win + "    | ");
     $('.player1Face img').attr("src", "https://i.imgur.com/xFbz6iF.png");
+    //player 2 score
     $('.player2').text(" - " + player2 + " Score: " + p2win + "    | ");
     $('.player2Face img').attr("src", "https://i.imgur.com/5iClZRp.png");
-    
+
 
 
     $('.box').on('click', function () {
-        
+
         if ($(this).find('img').attr('src') !== "") {
             return;
         }
-        $('.player2').text(" - " + player2 + " Score: " + p2win);
+
+        $('.player2').text(" - " + player2 + " Score: " + p2win + " | ");
         var id = parseInt($(this).attr('id').substring(3));
         if (play === 'O') {
             $(this).find('img').attr('src', "https://i.imgur.com/xFbz6iF.png");
@@ -46,16 +51,17 @@ $(document).ready(function () {
             console.log(xArr);
             $('.playerTurn h3').text("Player turn: " + player2 + " - ");
             $('.playerTurn img').attr("src", "https://i.imgur.com/5iClZRp.png");
-           player1MoveCounter();
-        }
-        else {
+            player1MoveCounter();
+
+        } else {
+
             $(this).find('img').attr('src', "https://i.imgur.com/5iClZRp.png");
             play = 'O';
             oArr.push(id);
             console.log(oArr);
             $('.playerTurn h3').text("Player turn: " + player1 + " - ");
             $('.playerTurn img').attr("src", "https://i.imgur.com/xFbz6iF.png");
-           player2MoveCounter();
+            player2MoveCounter();
 
         }
         function cond(num1, num2, num3, arr) {
@@ -77,9 +83,14 @@ $(document).ready(function () {
             || (cond(1, 5, 9, xArr))) {
             setTimeout(function () {
                 swal({
-                    title: "You Win !!",
-                    text: player1 + ' win',
+                    title: player1 + " Win !!",
+                    text: 'You win in ' + $(timer).text(),
+                    imageUrl: 'https://i.imgur.com/xFbz6iF.png',
+                    imageHeight: 50,
+                    imageWidth: 50,
+                    imageAlt: player1 + ' image',
                     icon: "success",
+
                 });
                 restart();
 
@@ -102,9 +113,14 @@ $(document).ready(function () {
             || (cond(1, 5, 9, oArr))) {
             setTimeout(function () {
                 swal({
-                    title: "You Win !!",
-                    text: player2 + ' win',
+                    title: player2 + " Win !!",
+                    text: 'You win in ' + $(timer).text(),
+                    imageUrl: 'https://i.imgur.com/5iClZRp.png',
+                    imageHeight: 50,
+                    imageWidth: 50,
+                    imageAlt: player2 + ' image',
                     icon: "success",
+
                 });
                 restart();
 
@@ -125,8 +141,8 @@ $(document).ready(function () {
             //reset moves
             player1Moves = 0;
             player2Moves = 0;
-            $(".player1Moves h3").text(player1Moves + " Moves"); 
-            $(".player2Moves h3").text(player2Moves + " Moves"); 
+            $(".player1Moves h3").text(player1Moves + " Moves");
+            $(".player2Moves h3").text(player2Moves + " Moves");
             //reset timer
             second = 0;
             minute = 0;
@@ -141,7 +157,7 @@ $(document).ready(function () {
                 DrawCounter++;
             }
         }
-        
+
         if (DrawCounter === 9) {
             setTimeout(function () {
                 swal('it is draw');
@@ -149,7 +165,7 @@ $(document).ready(function () {
 
             }, 300);
         }
-        for (var i= 0; i < stars.length; i++){
+        for (var i = 0; i < stars.length; i++) {
             stars[i].style.color = "#FFD700";
             stars[i].style.visibility = "visible";
         }
@@ -175,9 +191,9 @@ function startTimer() {
     }, 1000);
 }
 
-function player1MoveCounter(){
+function player1MoveCounter() {
     player1Moves++;
-    $(".player1Moves h3").text(player1Moves + " Moves"); 
+    $(".player1Moves h3").text(player1Moves + " Moves");
     // setting rates based on moves
     // if (player1Moves <= 3){
     //     for( i= 0; i <= 3; i++){
@@ -195,9 +211,9 @@ function player1MoveCounter(){
     // }
 }
 
-function player2MoveCounter(){
+function player2MoveCounter() {
     player2Moves++;
-    $(".player2Moves h3").text(player2Moves + " Moves"); 
+    $(".player2Moves h3").text(player2Moves + " Moves");
     // setting rates based on moves
     // if (player2Moves >= 3){
     //     for( i= 0; i <= 3; i++){
