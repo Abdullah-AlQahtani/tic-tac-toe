@@ -1,0 +1,210 @@
+/* index.html  */
+.main {
+    align-content: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.play {
+    background-color: #0D2C40;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+	margin: 4px 2px;
+	margin-top: 15px;
+    cursor: pointer;
+    position: relative;
+}
+.h1 {
+    text-align: center;
+    position: relative;
+    font-size: 40px;
+}
+
+/*  game.html */
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+.mainBox {
+    justify-content: center;
+    text-align: center;
+    background-color: transparent;
+    display: flex;
+    padding: 0 50px;
+/*     margin: 0 auto; */
+    
+    
+}
+
+.mainBox > div {
+  width: 410px;
+}
+
+.box {
+    width: 134px;
+    height: 134px;
+    float: left;
+    color: #EAEAEA;
+    font-size: 6.3em;
+    padding: 1px 27px;
+    
+}
+
+.box > img {
+    height: 75px;
+    width: 75px;
+}
+
+#box1, #box2, #box3 {
+    border-bottom: 3px solid #0D2C40;
+}
+
+#box2, #box5, #box8 {
+    border-left: 3px solid #0D2C40;
+    border-right: 3px solid #0D2C40;
+}
+
+#box2, #box5, #box8 {
+    border-left: 3px solid #0D2C40;
+    border-right: 3px solid #0D2C40;
+}
+
+#box4, #box5, #box6 {
+    border-bottom: 3px solid #0D2C40;
+}
+
+footer {
+    margin-top: 100px;
+    text-align: center;
+    align-content: center;
+	text-transform: uppercase;
+	padding: 0 20px;
+	color: #0D2C40;
+	font-size: 14px;
+	letter-spacing: .08em;
+	font-weight: 500;
+	
+}
+.copyright {
+    margin-top: 25px;
+    text-align: center;
+    align-content: center;
+    font-family: "Raleway",sans-serif;
+}
+
+.message {
+    font-family: "Raleway",sans-serif;
+}
+
+.name {
+	color:#F15B31;
+	font-weight:  700;
+}
+
+.love {
+    height: 40px;
+    width: 40px;
+}
+
+.abdullah {
+    height: 75px;
+    width: 75px;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.playerTurn {
+    display: flex;
+    justify-content: center;
+}
+
+.players {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+}
+
+.player1Face,.player2Face {
+        display: flex;
+        justify-content: center;
+        margin-right: 15px;
+        margin-top: 15px;
+}
+
+.player1Moves,.player2Moves {
+    display: inline-block;
+    justify-content: center;
+    margin-right: 15px;
+    margin-top: 15px;
+}
+
+.playersScore {
+    display: inline;
+    display: flex;
+    justify-content: center;
+}
+
+.swal-text {
+    background-color: #FEFAE3;
+    padding: 17px;
+    border: 1px solid #F0E1A1;
+    display: block;
+    margin: 22px;
+    text-align: center;
+    color: #61534e;
+  }
+  .player1Moves,.player2Moves {
+      display: block;
+  }
+
+/*
+ * Styles for the Score Panel
+ */
+
+
+ .score-panel {
+	text-align: left;
+	margin-bottom: 10px;
+}
+
+.score-panel .stars {
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+	list-style: none;
+	display: inline-block;
+}
+
+.score-panel .restart {
+	float: right;
+	cursor: pointer;
+}
+
+.fa-star {
+	color: #FFD700;
+}
+
+.timer {
+	display: inline-block;
+	margin: 0 1rem;
+}
+
