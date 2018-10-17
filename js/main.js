@@ -27,13 +27,13 @@ $(document).ready(function () {
     startTimer();
     //player turn
     $('.playerTurn h3').text("Player turn: " + player1 + " - ");
-    $('.playerTurn img').attr("src", "https://i.imgur.com/xFbz6iF.png");
+    $('.playerTurn img').attr("src", "../images/abdullah1.png");
     //player 1 score
     $('.player1').text(" - " + player1 + " Score: " + p2win + "    | ");
-    $('.player1Face img').attr("src", "https://i.imgur.com/xFbz6iF.png");
+    $('.player1Face img').attr("src", "../images/abdullah1.png");
     //player 2 score
     $('.player2').text(" - " + player2 + " Score: " + p2win + "    | ");
-    $('.player2Face img').attr("src", "https://i.imgur.com/5iClZRp.png");
+    $('.player2Face img').attr("src", "../images/abdullah2.png");
 
 
 
@@ -46,22 +46,22 @@ $(document).ready(function () {
         $('.player2').text(" - " + player2 + " Score: " + p2win + " | ");
         var id = parseInt($(this).attr('id').substring(3));
         if (play === 'O') {
-            $(this).find('img').attr('src', "https://i.imgur.com/xFbz6iF.png");
+            $(this).find('img').attr('src', "../images/abdullah1.png");
             play = 'X';
             xArr.push(id);
             console.log(xArr);
             $('.playerTurn h3').text("Player turn: " + player2 + " - ");
-            $('.playerTurn img').attr("src", "https://i.imgur.com/5iClZRp.png");
+            $('.playerTurn img').attr("src", "../images/abdullah2.png");
             player1MoveCounter();
 
         } else {
 
-            $(this).find('img').attr('src', "https://i.imgur.com/5iClZRp.png");
+            $(this).find('img').attr('src', "../images/abdullah2.png");
             play = 'O';
             oArr.push(id);
             console.log(oArr);
             $('.playerTurn h3').text("Player turn: " + player1 + " - ");
-            $('.playerTurn img').attr("src", "https://i.imgur.com/xFbz6iF.png");
+            $('.playerTurn img').attr("src", "../images/abdullah1.png");
             player2MoveCounter();
 
         }
@@ -85,7 +85,7 @@ $(document).ready(function () {
                 swal({
                     title: player1 + " Win !!",
                     text: 'You win in ' + $(timer).text(),
-                    imageUrl: 'https://i.imgur.com/xFbz6iF.png',
+                    imageUrl: '../images/abdullah1.png',
                     imageHeight: 100,
                     imageWidth: 100,
                     imageAlt: player1 + ' image',
@@ -111,7 +111,7 @@ $(document).ready(function () {
                 swal({
                     title: player2 + " Win !!",
                     text: 'You win in ' + $(timer).text(),
-                    imageUrl: 'https://i.imgur.com/5iClZRp.png',
+                    imageUrl: '../images/abdullah2.png',
                     imageHeight: 100,
                     imageWidth: 100,
                     imageAlt: player2 + ' image',
