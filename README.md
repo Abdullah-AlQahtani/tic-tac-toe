@@ -19,7 +19,7 @@ Try to win in less time with less moves.
 To play the game on Github pages go to https://abdullah-alqahtani.github.io/tic-tac-toe/
 
 ## Tree
-.
+
 ├── README.md
 ├── css
 │   ├── animate.css
