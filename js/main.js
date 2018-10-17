@@ -9,7 +9,7 @@ var xArr = [];
 var oArr = [];
 // game timer
 var second = 0, minute = 0; hour = 0;
-var timer = document.querySelector(".timer h3");
+var timer = document.querySelector(".timer > .startTimer");
 // var totaltTimer = $(timer).text();
 var interval;
 // move counter
@@ -25,26 +25,29 @@ var starsList = document.querySelectorAll(".stars li");
 
 $(document).ready(function () {
     startTimer();
+    // startTimer();
     //player turn
-    $('.playerTurn h3').text("Player turn: " + player1 + " - ");
+    $('.playerTurn h3').text(player1 + " turn: " + "    ");
     $('.playerTurn img').attr("src", "../images/abdullah1.png");
     //player 1 score
-    $('.player1').text(" - " + player1 + " Score: " + p2win + "    | ");
+    $('.player1').text(player1 + " -- Score: " + p1win + " | " + player1Moves + " Moves");
+    $(".player1").css("color", "red");
     $('.player1Face img').attr("src", "../images/abdullah1.png");
     //player 2 score
-    $('.player2').text(" - " + player2 + " Score: " + p2win + "    | ");
+    $('.player2').text(player2 + " -- Score: " + p2win + "  | " + player2Moves + " Moves");
+    $(".player2").css("color", "red");
     $('.player2Face img').attr("src", "../images/abdullah2.png");
 
 
 
     $('.box').on('click', function () {
-        ;
+
 
         if ($(this).find('img').attr('src') !== "") {
             return;
         }
 
-        $('.player2').text(" - " + player2 + " Score: " + p2win + " | ");
+        $('.player2').text(player2 + " -- Score: " + p2win + "  | " + player2Moves + " Moves");
 
 
         var id = parseInt($(this).attr('id').substring(3));
@@ -53,7 +56,7 @@ $(document).ready(function () {
             play = 'X';
             xArr.push(id);
             console.log(xArr);
-            $('.playerTurn h3').text("Player turn: " + player2 + " - ");
+            $('.playerTurn h3').text(player2 + " turn: " + "    ");
             $('.playerTurn img').attr("src", "../images/abdullah2.png");
             player1MoveCounter();
             $('#1').get(0).play();
@@ -64,7 +67,7 @@ $(document).ready(function () {
             play = 'O';
             oArr.push(id);
             console.log(oArr);
-            $('.playerTurn h3').text("Player turn: " + player1 + " - ");
+            $('.playerTurn h3').text(player1 + " turn: " + "    ");
             $('.playerTurn img').attr("src", "../images/abdullah1.png");
             player2MoveCounter();
             $('#2').get(0).play();
@@ -99,7 +102,8 @@ $(document).ready(function () {
                 $('#3').get(0).play();
 
                 p1win++;
-                $('.player1').text(" - " + player1 + " Score: " + p1win + " | ");
+                $('.player1').text(player1 + " -- Score: " + p1win + "  | " + player1Moves + " Moves");
+
 
             }, 300);
 
@@ -117,7 +121,7 @@ $(document).ready(function () {
             return setTimeout(function () {
                 swal({
                     title: player2 + " Win !!",
-                    text: 'You win in ' + $(timer).text() + " - " + player1MoveCounter(),
+                    text: 'You win in ' + $(timer).text() + "   ------   " + player1MoveCounter(),
                     imageUrl: '../images/abdullah2.png',
                     imageHeight: 100,
                     imageWidth: 100,
@@ -127,9 +131,10 @@ $(document).ready(function () {
                 });
                 restart();
                 $('#3').get(0).play();
-                
+
                 p2win++;
-                $('.player2').text(" - " + player2 + " Score: " + p2win + " | ");
+                $('.player2').text(player2 + " -- Score: " + p2win + "  | " + player2Moves + " Moves");
+
             }, 300);
 
         }
@@ -150,12 +155,14 @@ $(document).ready(function () {
             player1Moves = 0;
             player2Moves = 0;
             $(".player1Moves h3").text(player1Moves + " Moves");
+            $(".player1Moves h3").css("color", "red");
             $(".player2Moves h3").text(player2Moves + " Moves");
+            $(".player2Moves h3").css("color", "red");
             //reset timer
             second = 0;
             minute = 0;
             hour = 0;
-            $(".timer h3").text("0 minutes 0 seconds ");
+            $(".timer > .startTimer").text("0 minutes 0 seconds ");
             clearInterval(interval);
             startTimer();
         }
@@ -202,7 +209,7 @@ $(document).ready(function () {
 
 function startTimer() {
     interval = setInterval(function () {
-        $(".timer h3").text(minute + " minutes " + second + " seconds");
+        $(".timer > .startTimer").text(minute + " minutes " + second + " seconds");
         second++;
         if (second == 60) {
             minute++;
@@ -217,7 +224,8 @@ function startTimer() {
 
 function player1MoveCounter() {
     player1Moves++;
-    $(".player1Moves h3").text(player1Moves + " Moves");
+    $('.player1').text(player1 + " -- Score: " + p1win + " | " + player1Moves + " Moves");
+    // $(".player1Moves h3").text(player1Moves + " Moves");
     // setting rates based on moves
     if (player1Moves === 4) {
         for (i = 0; i <= 3; i++) {
@@ -238,7 +246,8 @@ function player1MoveCounter() {
 
 function player2MoveCounter() {
     player2Moves++;
-    $(".player2Moves h3").text(player2Moves + " Moves");
+    $('.player2').text(player2 + " -- Score: " + p2win + "  | " + player2Moves + " Moves");    
+    // $(".player2Moves h3").text(player2Moves + " Moves");
     // setting rates based on moves
     // debugger;
     if (player2Moves === 4) {

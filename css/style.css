@@ -1,3 +1,7 @@
+
+body {
+    font-family: 'Niramit', sans-serif;
+}
 /* index.html  */
 .main {
     align-content: center;
@@ -83,7 +87,6 @@ html {
 }
 
 footer {
-    margin-top: 100px;
     text-align: center;
     align-content: center;
 	text-transform: uppercase;
@@ -95,7 +98,6 @@ footer {
 	
 }
 .copyright {
-    margin-top: 25px;
     text-align: center;
     align-content: center;
     font-family: "Raleway",sans-serif;
@@ -132,31 +134,32 @@ footer {
     justify-content: center;
 }
 
-.players {
-    display: flex;
+.playerTurn > img {
+    align-content: center;
     justify-content: center;
+}
+
+.players {
+    display: inline;
+    align-content: center;
+    text-align: center;
     height: 50px;
     width: 50px;
 }
 
 .player1Face,.player2Face {
-        display: flex;
-        justify-content: center;
+        display: block;
+        align-content: center;
         margin-right: 15px;
         margin-top: 15px;
 }
 
-.player1Moves,.player2Moves {
-    display: inline-block;
-    justify-content: center;
-    margin-right: 15px;
-    margin-top: 15px;
-}
 
 .playersScore {
     display: inline;
-    display: flex;
-    justify-content: center;
+    align-content: center;
+    text-align: center;
+
 }
 
 .swal-text {
@@ -169,9 +172,6 @@ footer {
     color: #61534e;
   }
 
-  .player1Moves,.player2Moves {
-      display: block;
-  }
 
 /*
  * Styles for the Score Panel
@@ -179,6 +179,7 @@ footer {
 
 
  .score-panel {
+    display: inline-block;
 	text-align: left;
 	margin-bottom: 10px;
 }
@@ -205,6 +206,8 @@ footer {
 }
 
 .timer {
+    text-align: center;
+    align-content: center;
 	display: inline-block;
 	margin: 0 1rem;
 }
