@@ -5,7 +5,7 @@
 * [Instructions](#instructions)
 * [Challenge](#Challenge)
 * [Demo](#Demo)
-* [Project Tree] (#Tree)
+* [Project_Tree](#Tree)
 
 ## Instructions
 * Click on any Box
