@@ -38,12 +38,15 @@ $(document).ready(function () {
 
 
     $('.box').on('click', function () {
+        ;
 
         if ($(this).find('img').attr('src') !== "") {
             return;
         }
 
         $('.player2').text(" - " + player2 + " Score: " + p2win + " | ");
+
+
         var id = parseInt($(this).attr('id').substring(3));
         if (play === 'O') {
             $(this).find('img').attr('src', "../images/abdullah1.png");
@@ -53,6 +56,7 @@ $(document).ready(function () {
             $('.playerTurn h3').text("Player turn: " + player2 + " - ");
             $('.playerTurn img').attr("src", "../images/abdullah2.png");
             player1MoveCounter();
+            $('#1').get(0).play();
 
         } else {
 
@@ -63,6 +67,7 @@ $(document).ready(function () {
             $('.playerTurn h3').text("Player turn: " + player1 + " - ");
             $('.playerTurn img').attr("src", "../images/abdullah1.png");
             player2MoveCounter();
+            $('#2').get(0).play();
 
         }
         function cond(num1, num2, num3, arr) {
@@ -81,7 +86,7 @@ $(document).ready(function () {
             || (cond(3, 6, 9, xArr))
             || (cond(3, 5, 7, xArr))
             || (cond(1, 5, 9, xArr))) {
-            setTimeout(function () {
+            return setTimeout(function () {
                 swal({
                     title: player1 + " Win !!",
                     text: 'You win in ' + $(timer).text(),
@@ -91,10 +96,12 @@ $(document).ready(function () {
                     imageAlt: player1 + ' image',
                 });
                 restart();
+                $('#3').get(0).play();
+
+                p1win++;
+                $('.player1').text(" - " + player1 + " Score: " + p1win + " | ");
 
             }, 300);
-            p1win++;
-            $('.player1').text(" - " + player1 + " Score: " + p1win + " | ");
 
 
 
@@ -107,10 +114,10 @@ $(document).ready(function () {
             || (cond(3, 6, 9, oArr))
             || (cond(3, 5, 7, oArr))
             || (cond(1, 5, 9, oArr))) {
-            setTimeout(function () {
+            return setTimeout(function () {
                 swal({
                     title: player2 + " Win !!",
-                    text: 'You win in ' + $(timer).text(),
+                    text: 'You win in ' + $(timer).text() + " - " + player1MoveCounter(),
                     imageUrl: '../images/abdullah2.png',
                     imageHeight: 100,
                     imageWidth: 100,
@@ -119,18 +126,23 @@ $(document).ready(function () {
 
                 });
                 restart();
-
+                $('#3').get(0).play();
+                
+                p2win++;
+                $('.player2').text(" - " + player2 + " Score: " + p2win + " | ");
             }, 300);
-            p2win++;
-            $('.player2').text(" - " + player2 + " Score: " + p2win + " | ");
 
         }
 
-        // debugger;
+        ;
 
         function restart() {
             for (var i of $('.box img')) {
                 $(i).attr('src', '');
+            }
+            // debugger;
+            for (var i = 0; i <= 2; i++) {
+                $(stars[i]).css('display', 'inline');
             }
             xArr = [];
             oArr = [];
@@ -156,6 +168,7 @@ $(document).ready(function () {
         }
 
         if (DrawCounter === 9) {
+            $('#4').get(0).play();
             setTimeout(function () {
                 swal({
                     title: "it's Draw !!",
@@ -176,10 +189,10 @@ $(document).ready(function () {
 
             }, 300);
         }
-        for (var i = 0; i < stars.length; i++) {
-            stars[i].style.color = "#FFD700";
-            stars[i].style.visibility = "visible";
-        }
+        // for (var i = 0; i < stars.length; i++) {
+        //     stars[i].style.color = "#FFD700";
+        //     stars[i].style.visibility = "visible";
+        // }
 
     })
 
@@ -206,38 +219,41 @@ function player1MoveCounter() {
     player1Moves++;
     $(".player1Moves h3").text(player1Moves + " Moves");
     // setting rates based on moves
-    // if (player1Moves <= 3){
-    //     for( i= 0; i <= 3; i++){
-    //         if(i > 1){
-    //             stars[i].style.visibility = "collapse";
-    //         }
-    //     }
-    // }
-    // else if (player1Moves > 5){
-    //     for( i= 0; i < 3; i++){
-    //         if(i > 0){
-    //             stars[i].style.visibility = "collapse";
-    //         }
-    //     }
-    // }
+    if (player1Moves === 4) {
+        for (i = 0; i <= 3; i++) {
+            if (i > 1) {
+                $(stars[i]).css('display', 'none');
+                // $(stars[i]).css('visibility',"collapse") ;css('display','none')
+            }
+        }
+    }
+    else if (player1Moves >= 5) {
+        for (i = 0; i < 3; i++) {
+            if (i > 0) {
+                $(stars[i]).css('display', 'none');
+            }
+        }
+    }
 }
 
 function player2MoveCounter() {
     player2Moves++;
     $(".player2Moves h3").text(player2Moves + " Moves");
     // setting rates based on moves
-    // if (player2Moves >= 3){
-    //     for( i= 0; i <= 3; i++){
-    //         if(i > 1){
-    //             stars[i].style.visibility = "collapse";
-    //         }
-    //     }
-    // }
-    // else if (player2Moves > 13){
-    //     for( i= 0; i < 3; i++){
-    //         if(i > 0){
-    //             stars[i].style.visibility = "collapse";
-    //         }
-    //     }
-    // }
+    // debugger;
+    if (player2Moves === 4) {
+        for (i = 0; i <= 3; i++) {
+            if (i > 1) {
+                $(stars[i]).css('display', 'none');
+
+            }
+        }
+    }
+    else if (player2Moves >= 5) {
+        for (i = 0; i < 2; i++) {
+            if (i > 0) {
+                $(stars[i]).css('display', 'none');
+            }
+        }
+    }
 }
