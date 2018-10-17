@@ -1,3 +1,4 @@
+
 var player1 = prompt("Enter Player 1 ( X ) name :");
 var player2 = prompt("Enter Player 2 ( O ) name :");
 var score = 0;
@@ -72,8 +73,7 @@ $(document).ready(function () {
                 return false;
             }
         }
-        if (
-            (cond(1, 2, 3, xArr))
+        if ((cond(1, 2, 3, xArr))
             || (cond(4, 5, 6, xArr))
             || (cond(7, 8, 9, xArr))
             || (cond(1, 4, 7, xArr))
@@ -86,11 +86,9 @@ $(document).ready(function () {
                     title: player1 + " Win !!",
                     text: 'You win in ' + $(timer).text(),
                     imageUrl: 'https://i.imgur.com/xFbz6iF.png',
-                    imageHeight: 50,
-                    imageWidth: 50,
+                    imageHeight: 100,
+                    imageWidth: 100,
                     imageAlt: player1 + ' image',
-                    icon: "success",
-
                 });
                 restart();
 
@@ -98,12 +96,10 @@ $(document).ready(function () {
             p1win++;
             $('.player1').text(" - " + player1 + " Score: " + p1win + " | ");
 
-            // debugger;
 
 
 
-        } else if (
-            (cond(1, 2, 3, oArr))
+        } else if ((cond(1, 2, 3, oArr))
             || (cond(4, 5, 6, oArr))
             || (cond(7, 8, 9, oArr))
             || (cond(1, 4, 7, oArr))
@@ -116,8 +112,8 @@ $(document).ready(function () {
                     title: player2 + " Win !!",
                     text: 'You win in ' + $(timer).text(),
                     imageUrl: 'https://i.imgur.com/5iClZRp.png',
-                    imageHeight: 50,
-                    imageWidth: 50,
+                    imageHeight: 100,
+                    imageWidth: 100,
                     imageAlt: player2 + ' image',
                     icon: "success",
 
@@ -151,6 +147,7 @@ $(document).ready(function () {
             clearInterval(interval);
             startTimer();
         }
+
         var DrawCounter = 0;
         for (var i of $('.box img')) {
             if ($(i).attr('src') !== '') {
@@ -160,7 +157,21 @@ $(document).ready(function () {
 
         if (DrawCounter === 9) {
             setTimeout(function () {
-                swal('it is draw');
+                swal({
+                    title: "it's Draw !!",
+                    text: 'unfourntionly, no one win next time use smart strategy',
+                    imageUrl: 'https://i.imgur.com/NiHRLTo.png',
+                    imageHeight: 100,
+                    imageWidth: 100,
+                    icon: "error",
+                    backdrop: `
+                    #FFFFFF
+                    url("https://i.imgur.com/NiHRLTo.png")
+                    repeat
+                  `
+
+                });
+                DrawCounter = 0;
                 restart();
 
             }, 300);

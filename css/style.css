@@ -43,7 +43,6 @@ html {
     padding: 0 50px;
 /*     margin: 0 auto; */
     
-    
 }
 
 .mainBox > div {
@@ -169,6 +168,7 @@ footer {
     text-align: center;
     color: #61534e;
   }
+
   .player1Moves,.player2Moves {
       display: block;
   }
