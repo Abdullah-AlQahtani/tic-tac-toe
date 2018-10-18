@@ -20,25 +20,25 @@ To play the game on Github pages go to https://abdullah-alqahtani.github.io/tic-
 
 ## Tree
 
-├── README.md
-├── css
-│   ├── animate.css
-│   └── style.css
-├── game
-│   └── game.html
-├── images
-│   ├── abdullah1.png
-│   ├── abdullah2.png
-│   ├── abdullah3.png
-│   ├── abdullah4.png
-│   └── abdullah5.png
-├── index.html 
-├── js
-│   └── main.js
-├── package-lock.json
-└── sound
-    ├── 1.m4a
-    ├── 2.m4a
-    ├── 3.m4a
-    └── 4.m4a
+├── README.md <br>
+├── css <br>
+│   ├── animate.css<br>
+│   └── style.css<br>
+├── game<br>
+│   └── game.html<br>
+├── images <br>
+│   ├── abdullah1.png <br>
+│   ├── abdullah2.png <br>
+│   ├── abdullah3.png <br>
+│   ├── abdullah4.png <br>
+│   └── abdullah5.png <br>
+├── index.html <br>
+├── js <br>
+│   └── main.js <br>
+├── package-lock.json <br>
+└── sound <br>
+    ├── 1.m4a <br>
+    ├── 2.m4a <br>
+    ├── 3.m4a <br>
+    └── 4.m4a <br>
 
