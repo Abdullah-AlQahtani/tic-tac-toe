@@ -2,10 +2,20 @@
 
 ## Table of Contents
 
+* [overview idea](#Overview)
 * [Instructions](#instructions)
 * [Challenge](#Challenge)
 * [Demo](#Demo)
-* [Project_Tree](#Tree)
+* [Credit](#Credit)
+* [Project Tree](#Tree)
+
+## Overview
+is a Javascript game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.
+
+The following example game is won by the first player, X:
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Tic-tac-toe-game-1.svg/958px-Tic-tac-toe-game-1.svg.png)
+
 
 ## Instructions
 * Click on any Box
@@ -17,6 +27,16 @@ Try to win in less time with less moves.
 
 ## Demo 
 To play the game on Github pages go to https://abdullah-alqahtani.github.io/tic-tac-toe/
+
+## Credit
+* Jack
+* Trevors
+* Sultan The Smart Guy
+* ME
+* Myself
+* I
+* W3ScHool
+
 
 ## Tree
 
