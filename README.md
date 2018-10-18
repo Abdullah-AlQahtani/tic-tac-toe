@@ -40,7 +40,7 @@ To play the game on Github pages go to https://abdullah-alqahtani.github.io/tic-
 
 ## Screenshot
 
-1[](https://i.imgur.com/xf5nwFS.png)
+![](https://i.imgur.com/xf5nwFS.png)
 
 ## Tree
 
