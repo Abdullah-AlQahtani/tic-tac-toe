@@ -7,6 +7,7 @@
 * [Challenge](#Challenge)
 * [Demo](#Demo)
 * [Credit](#Credit)
+* [Screenshot](#Screenshot)
 * [Project Tree](#Tree)
 
 ## Overview
@@ -37,6 +38,9 @@ To play the game on Github pages go to https://abdullah-alqahtani.github.io/tic-
 * I
 * W3ScHool
 
+## Screenshot
+
+1[](https://i.imgur.com/xf5nwFS.png)
 
 ## Tree
 
